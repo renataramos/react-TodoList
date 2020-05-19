@@ -6,13 +6,13 @@ export default function NavBar(props){
     if (props.view === true){
         return (
         
-            <div class="card-header">
+            <div id ="nav" class="card-header">
                 <ul class="nav nav-pills card-header-pills">
                     <li class="nav-item">
-                        <button class="nav-link active" onClick={()=>placeholder()} >complete tasks</button>
+                        <button id="btns-nav" class="btn btn-outline-light" onClick={()=>placeholder()}><strong>finished tasks</strong></button>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link" onClick={()=>props.onToggleView()} >incomplete tasks</button>
+                        <button id="btns-nav" class="btn btn-outline-light" onClick={()=>props.onToggleView()}><strong>incomplete tasks</strong></button>
                     </li>
                 </ul>
             </div>
@@ -21,13 +21,13 @@ export default function NavBar(props){
     
     return (
         
-            <div class="card-header">
+            <div id ="nav" class="card-header">
                 <ul class="nav nav-pills card-header-pills">
                     <li class="nav-item">
-                    <button class="nav-link" onClick={()=>props.onToggleView()}>complete tasks</button>
+                        <button id="btns-nav" class="btn btn-outline-light" onClick={()=>props.onToggleView()}><strong>finished tasks</strong></button>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link active" onClick={()=>placeholder()} >incomplete tasks</button>
+                        <button id="btns-nav" class="btn btn-outline-light" onClick={()=>placeholder()}><strong>incomplete tasks</strong></button>
                     </li>
                 </ul>
             </div>

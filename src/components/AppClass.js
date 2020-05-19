@@ -100,7 +100,7 @@ export default class App extends React.Component {
                     onAddTask={this.handleAddTask}
                     onClearTasks={this.clearTasks}
                 />
-                <div class = "card text">
+                <div id ="nav" class="card text">
                 <NavBar
                     view={this.state.defaultView}
                     onToggleView={this.handleToggleView}

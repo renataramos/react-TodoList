@@ -1,5 +1,5 @@
 body {
-  margin: 25px;
+  margin: 55px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -14,12 +14,52 @@ code {
 
 #btns {
   
-  margin-left: 7px;
+  margin-left: 5px;
   margin-bottom: 5px;
 }
 
+#btns-nav{
+ margin-right: 9px;
+ margin-left: 5px;
+}
+
+
+
 #input {
   margin-bottom: 25px;
-  width: 800px;
-  height: 30px;
+  margin-right: 17px;
+  width: 525px;
+  height: 47px;
+  border-radius: 5px;
+  
 }
+
+#description{
+  padding-top: 4px;
+  float:left;
+  width: 545px;
+}
+
+li{
+  clear:both;
+}
+
+#nav{
+  max-width: 700px;
+  
+}
+
+
+
+h1{
+  margin-bottom: 55px;
+  text-decoration: underline;
+}
+
+.card-header{
+  background-color: steelblue;
+}
+.text{
+  background-color: aliceblue;
+}
+

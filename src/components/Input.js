@@ -7,12 +7,12 @@ export default function Input (props){
             <input
                 id="input"
                 type='text'
-                placeholder = 'new task'
+                placeholder = 'get to work!'
                 value={props.value}
                 onChange={props.onInputChange}
             />
-            <button id="btns" type="button" class="btn btn-secondary btn-sm" onClick={props.onAddTask}>submit</button>
-            <button id="btns" type="button" class="btn btn-secondary btn-sm" onClick={props.onClearTasks}>clear all</button>
+            <button id="btns" type="button" class="btn btn-secondary btn-lg" onClick={props.onAddTask}>submit</button>
+            <button id="btns" type="button" class="btn btn-secondary btn-lg" onClick={props.onClearTasks}><i class="fas fa-ban"></i></button>
         </div>
         
     )
