@@ -11,13 +11,21 @@ export default class App extends React.Component {
         this.state = {
             allTasks: [
                 {
-                    description: "Complete",
-                    completeStatus: true
+                    description: "study CSS",
+                    completeStatus: false
                 },
 
                 {
-                    description: "Incomplete",
-                    completeStatus: false
+                    description: "study JavaScript",
+                    completeStatus: true
+                },
+                {
+                    description: "study React",
+                    completeStatus: true
+                },
+                {
+                    description: "sleep",
+                    completeStatus: false 
                 }
             ],
             input: '',
@@ -32,11 +40,11 @@ export default class App extends React.Component {
 
     }
 
-    handleToggleView(){
+    handleToggleView(viewName){
         this.setState((currentState=>{
-            const currentView = currentState.defaultView
+            
             return {
-                defaultView: !currentView
+                defaultView: viewName
             }
         }))
     }
