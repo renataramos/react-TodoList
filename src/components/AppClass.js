@@ -1,7 +1,7 @@
 import React from 'react';
-import IncompleteTasks from '../components/IncompleteTasks.js'
-import CompleteTasks from '../components/CompleteTasks.js'
 import Input from '../components/Input.js'
+import NavBar from '../components/NavBar.js'
+import Tasks from '../components/Tasks.js'
 
 export default class App extends React.Component {
 
@@ -10,21 +10,43 @@ export default class App extends React.Component {
         super(props)
         this.state = {
             allTasks: [
+                {
+                    description: "Complete",
+                    completeStatus: true
+                },
+
+                {
+                    description: "Incomplete",
+                    completeStatus: false
+                }
             ],
-            input: ''
+            input: '',
+            defaultView: false
         }
         this.handleRemoveTask = this.handleRemoveTask.bind(this)
         this.handleAddTask = this.handleAddTask.bind(this)
         this.updateInput = this.updateInput.bind(this)
         this.handleToggleCompletion = this.handleToggleCompletion.bind(this)
         this.clearTasks = this.clearTasks.bind(this)
+        this.handleToggleView = this.handleToggleView.bind(this)
 
+    }
+
+    handleToggleView(){
+        this.setState((currentState=>{
+            const currentView = currentState.defaultView
+            return {
+                defaultView: !currentView
+            }
+        }))
     }
 
     handleToggleCompletion(description){
         this.setState((currentState)=>{
             const task = currentState.allTasks.find((task) => task.description === description)
-
+            task.completeStatus = !task.completeStatus;
+            
+            
             return {
                 allTasks: currentState.allTasks.filter((task) => task.description !== description)
                 .concat([{
@@ -72,42 +94,26 @@ export default class App extends React.Component {
     render(){
         return (
             <div>
-            <Input
-                value={this.state.input}
-                onInputChange={this.updateInput}
-                onAddTask={this.handleAddTask}
-                onClearTasks={this.clearTasks}
-            />
+                <Input
+                    value={this.state.input}
+                    onInputChange={this.updateInput}
+                    onAddTask={this.handleAddTask}
+                    onClearTasks={this.clearTasks}
+                />
                 <div class = "card text">
-                    <div class="card-header">
-                        <ul class="nav nav-tabs card-header-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#all">all tasks</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#complete">complete tasks</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#zi">incomplete tasks</a>
-                            </li>
-                    </ul>
-                </div>
-                </div>
-                <div class="card-body">
-
-
-                <CompleteTasks
-                    list={this.state.allTasks.filter((task)=> task.completeStatus === true)}
+                <NavBar
+                    view={this.state.defaultView}
+                    onToggleView={this.handleToggleView}
+                />
+                <Tasks
+                    view={this.state.defaultView}
+                    list={this.state.allTasks}
                     onRemoveTask={this.handleRemoveTask} 
                     onToggleTask={this.handleToggleCompletion}
-                    />
-                <IncompleteTasks
-                    list={this.state.allTasks.filter((task)=> task.completeStatus === false)}
-                    onRemoveTask={this.handleRemoveTask} 
-                    onToggleTask={this.handleToggleCompletion}
-                    />
+                />
                 </div>
             </div>
-        
         )}
     }
+
+
