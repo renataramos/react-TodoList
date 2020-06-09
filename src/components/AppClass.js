@@ -101,7 +101,7 @@ export default class App extends React.Component {
 
     render(){
         return (
-            <div>
+            <div id="content">
                 <Input
                     value={this.state.input}
                     onInputChange={this.updateInput}

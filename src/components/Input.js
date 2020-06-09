@@ -11,8 +11,8 @@ export default function Input (props){
                 value={props.value}
                 onChange={props.onInputChange}
             />
-            <button id="btns" type="button" class="btn btn-secondary btn-lg" onClick={props.onAddTask}>submit</button>
-            <button id="btns" type="button" class="btn btn-secondary btn-lg" onClick={props.onClearTasks}><i class="fas fa-ban"></i></button>
+            <button id="btns" type="button" class="btn btn-success btn-lg" onClick={props.onAddTask}>submit</button>
+            <button id="btns" type="button" class="btn btn-danger btn-lg" onClick={props.onClearTasks}><i class="fas fa-ban"></i></button>
         </div>
         
     )
