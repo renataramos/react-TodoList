@@ -4,8 +4,7 @@ export default function Tasks (props) {
     
     const completeTasksView = "complete";
     const incompleteTasksView = "incomplete";
-    /*
-    */
+   
     if (props.view === completeTasksView){
         return (
             <div id ="nav" class="card-body">
@@ -78,3 +77,4 @@ function checkForButtonColor(task){
     }
     return "btn btn-success btn-sm"
 }
+
